@@ -1,8 +1,12 @@
 package com.example.Ris.Agenda.model;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class AgendaDTO {
+
+    @NotNull(groups = {Modify.class, ChangeStatus.class},message = "Es necesario el id")
+    private Long id;
     @NotBlank(groups = {Register.class,Modify.class},message = "El dia no puede ser nulo")
     private String dia;
     @NotBlank(groups = {Register.class,Modify.class},message = "La hora no puede ser nula")
@@ -45,6 +49,14 @@ public class AgendaDTO {
 
     public void setDia(String dia) {
         this.dia = dia;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public interface Register{}
