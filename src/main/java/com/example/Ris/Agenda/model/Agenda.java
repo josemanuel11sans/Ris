@@ -32,6 +32,7 @@ public class Agenda {
     public Agenda(String dia, String hora, String ubicacion, String motivo,boolean status) {
         this.dia = dia;
         this.hora = hora;
+        this.ubicacion=ubicacion;
         this.motivo = motivo;
         this.status = status;
     }
@@ -40,6 +41,7 @@ public class Agenda {
         this.id = id;
         this.dia = dia;
         this.hora = hora;
+        this.ubicacion=ubicacion;
         this.motivo = motivo;
         this.status = status;
     }
