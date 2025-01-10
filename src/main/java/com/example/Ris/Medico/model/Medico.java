@@ -14,14 +14,15 @@ public class Medico {
     private String apellido;
     @Column(name = "especialidad", columnDefinition = "VARCHAR(50)")
     private String especialidade;
+    @Column(name = "status",columnDefinition = "BOOL DEFAULT TRUE")
+    private boolean status;
 
-    public Medico(Long id, String nombre, String apellido, String especialidade) {
-        this.id = id;
+    public Medico( String nombre, String apellido, String especialidade, boolean status) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.especialidade = especialidade;
+        this.status = status;
     }
-
     public Medico() {
 
     }
@@ -56,5 +57,13 @@ public class Medico {
 
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }
